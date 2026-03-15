@@ -19,7 +19,7 @@ ENV/
 
 # Output
 output/
-images/
+
 
 # Alembic
 alembic/versions/*.py

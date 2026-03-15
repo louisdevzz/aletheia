@@ -22,12 +22,10 @@ dependencies = [
     "uvicorn[standard]",   # ASGI server
     "python-multipart",    # File uploads
     # RAG Processing (Phase 1, 2, 3)
-    "sentence-transformers>=2.2.0",  # Semantic chunking & embeddings
-    "tiktoken>=0.5.0",               # Token counting for OpenAI models
-    "nltk>=3.8",                     # Text processing for semantic chunking
-    "scikit-learn>=1.3.0",           # Cosine similarity for semantic chunking
-    # Optional: GPU acceleration
-    # "torch>=2.0.0",                  # PyTorch for GPU (uncomment if needed)
+    "sentence-transformers>=2.2.0",  
+    "tiktoken>=0.5.0",               
+    "nltk>=3.8",                    
+    "scikit-learn>=1.3.0",           
     # Agent capabilities
     "aiohttp",             # Async HTTP for web fetching
     "apscheduler",         # Cron jobs for learning

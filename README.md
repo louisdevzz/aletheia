@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./images/aletheia_nbg.png" alt="Aletheia Logo" width="180" />
+
 # Aletheia 🦀
 
 **Your Own Truth-Grounded AI Research Assistant**
