@@ -1,0 +1,33 @@
+# Elasticsearch Configuration
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html
+
+# Cluster settings
+cluster.name: aletheia-es-cluster
+node.name: elasticsearch
+
+# Network settings
+network.host: 0.0.0.0
+http.port: 9200
+transport.port: 9300
+
+# Discovery settings (single node)
+discovery.type: single-node
+
+# Security settings (disabled for local development)
+xpack.security.enabled: false
+xpack.security.enrollment.enabled: false
+
+# Memory settings
+bootstrap.memory_lock: true
+
+# CORS settings (for browser access)
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.cors.allow-methods: OPTIONS, HEAD, GET, POST, PUT, DELETE
+http.cors.allow-headers: X-Requested-With, X-Auth-Token, Content-Type, Content-Length
+
+# Index settings
+action.destructive_requires_name: true
+
+# Query settings
+indices.query.bool.max_clause_count: 4096

@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full overflow-hidden;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  /* Custom dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-white/10 hover:bg-white/20;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    @apply bg-transparent;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-[#10a37f]/30;
+  }
+}
+
+@layer components {
+  /* ChatGPT-style message animations */
+  .message-enter {
+    animation: messageSlide 0.3s ease-out forwards;
+  }
+  
+  @keyframes messageSlide {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Typing indicator animation */
+  .typing-dot {
+    animation: typingBounce 1.4s infinite ease-in-out both;
+  }
+  
+  .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+  .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+  
+  @keyframes typingBounce {
+    0%, 80%, 100% { 
+      transform: scale(0);
+      opacity: 0.5;
+    }
+    40% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Gradient text for brand */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#10a37f] to-[#19c59f] bg-clip-text text-transparent;
+  }
+
+  /* Glass effect for cards */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  /* Glow effect for buttons */
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full;
+    transition: transform 0.5s;
+  }
+  
+  .btn-glow:hover::before {
+    @apply translate-x-full;
+  }
+
+  /* Code block styling */
+  .code-block {
+    @apply relative rounded-lg bg-[#1e1e1e] border border-white/10 overflow-hidden;
+  }
+  
+  .code-block pre {
+    @apply p-4 overflow-x-auto text-sm leading-relaxed;
+  }
+
+  /* Markdown content styling */
+  .markdown-content {
+    @apply prose prose-invert prose-sm max-w-none;
+  }
+  
+  .markdown-content p {
+    @apply mb-4 last:mb-0;
+  }
+  
+  .markdown-content ul, .markdown-content ol {
+    @apply mb-4 ml-4;
+  }
+  
+  .markdown-content li {
+    @apply mb-1;
+  }
+  
+  .markdown-content code {
+    @apply bg-white/10 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  
+  .markdown-content pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  .markdown-content blockquote {
+    @apply border-l-4 border-[#10a37f] pl-4 italic text-white/70;
+  }
+  
+  .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+    @apply font-semibold mt-6 mb-3 first:mt-0;
+  }
+  
+  .markdown-content h1 { @apply text-xl; }
+  .markdown-content h2 { @apply text-lg; }
+  .markdown-content h3 { @apply text-base; }
+
+  /* Source citation chips */
+  .source-chip {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs 
+           bg-[#10a37f]/10 text-[#10a37f] border border-[#10a37f]/20
+           hover:bg-[#10a37f]/20 transition cursor-pointer;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+}

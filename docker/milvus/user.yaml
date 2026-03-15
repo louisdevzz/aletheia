@@ -1,0 +1,13 @@
+# Extra config to override default milvus.yaml
+# Add your custom Milvus configuration here
+#
+# Example configurations:
+#
+# proxy:
+#   healthCheckTimeout: 1000  # ms, the interval that to do component healthy check
+#
+# queryCoord:
+#   autoHandoff: true
+#
+# queryNode:
+#   cacheSize: 32  # GB

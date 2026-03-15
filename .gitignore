@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Environment
+.env
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output
+output/
+images/
+
+# Alembic
+alembic/versions/*.py
+!alembic/versions/.gitkeep
+
+# Data
+data/*.pdf
+
+.claude
+
+# Python Package
+*.egg-info/
+*.egg
+build/
+dist/
+*.whl
+
+# Scripts Output
+scripts/*.txt
+scripts/*.log
+scripts/output_*
+
+# Test Artifacts
+*.pytest_cache/
+.coverage
+htmlcov/
+# macOS
+.DS_Store
+**/.DS_Store
+.ruff_cache
+
+uploads/

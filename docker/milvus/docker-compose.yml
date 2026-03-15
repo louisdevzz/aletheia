@@ -1,0 +1,42 @@
+# Milvus Standalone - Docker Compose Configuration
+# https://milvus.io/docs/install_standalone-docker.md
+# Version: 2.6.11
+
+services:
+  milvus-standalone:
+    container_name: milvus-standalone
+    image: milvusdb/milvus:v2.6.11
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      ETCD_USE_EMBED: "true"
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+      ETCD_CONFIG_PATH: /milvus/configs/embedEtcd.yaml
+      COMMON_STORAGETYPE: local
+      DEPLOY_MODE: STANDALONE
+    volumes:
+      - milvus-data:/var/lib/milvus
+      - ./embedEtcd.yaml:/milvus/configs/embedEtcd.yaml:ro
+      - ./user.yaml:/milvus/configs/user.yaml:ro
+    ports:
+      - "19530:19530"  # Milvus gRPC port
+      - "9091:9091"    # Milvus WebUI / HTTP port
+      - "2379:2379"    # Embedded etcd port
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      start_period: 90s
+      timeout: 20s
+      retries: 3
+    command: milvus run standalone
+    restart: unless-stopped
+    networks:
+      - milvus-network
+
+volumes:
+  milvus-data:
+    driver: local
+
+networks:
+  milvus-network:
+    driver: bridge
