@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./images/aletheia_nbg.png" alt="Aletheia Logo" width="180" />
+<img src="./images/aletheia.png" alt="Aletheia Logo" width="180" />
 
 # Aletheia 🦀
 
@@ -242,15 +242,18 @@ This structure helps the agent reason across papers rather than treating them as
 Aletheia maintains several layers of memory to support long-term research collaboration.
 
 **Short-Term Memory**
+
 - current conversation context
 - temporary reasoning steps
 
 **Project Memory**
+
 - research projects
 - literature collections
 - working notes
 
 **Long-Term Memory**
+
 - discovered insights
 - frequently used concepts
 - user research interests
@@ -401,36 +404,43 @@ The more you work with it, the more useful it becomes.
 Aletheia assists across multiple stages of the research process.
 
 ### 1. Discovery
+
 Find and collect relevant papers and sources.
 
 ### 2. Understanding
+
 Break down complex ideas and methodologies.
 
 ### 3. Organization
+
 Structure knowledge across papers and topics.
 
 ### 4. Synthesis
+
 Connect insights across multiple sources.
 
 ### 5. Ideation
+
 Explore hypotheses and research directions.
 
 ### 6. Writing
+
 Generate structured reports, essays, and research papers.
 
 ### 7. Verification
+
 Ensure claims remain grounded in original sources.
 
 ---
 
 ## Typical Workflow
 
-1. Deploy your Aletheia agent  
-2. Upload research papers and documents  
-3. Ask questions or explore topics  
-4. The agent retrieves and analyzes relevant material  
-5. It synthesizes insights across sources  
-6. Responses remain grounded in verified information  
+1. Deploy your Aletheia agent
+2. Upload research papers and documents
+3. Ask questions or explore topics
+4. The agent retrieves and analyzes relevant material
+5. It synthesizes insights across sources
+6. Responses remain grounded in verified information
 
 Over time, the agent also learns your **interests and writing style**.
 
