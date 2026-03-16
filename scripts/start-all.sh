@@ -39,7 +39,7 @@ log_step "Starting Aletheia Daemon..."
 if lsof -ti:8000 > /dev/null 2>&1; then
     log_info "Daemon already running on port 8000"
 else
-    nohup uv run aletheia daemon --host 0.0.0.0 --port 8000 > /tmp/aletheia.log 2>&1 &
+    nohup bun run src/server.ts > /tmp/aletheia.log 2>&1 &
     
     # Wait for daemon
     log_info "Waiting for daemon to start..."

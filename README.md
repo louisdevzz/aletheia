@@ -481,8 +481,8 @@ But a **long-term research partner dedicated to helping you discover truth.**
 ```bash
 git clone https://github.com/louisdevzz/aletheia
 cd aletheia
-pnpm install
-pnpm run dev
+bun install
+bun run dev
 ```
 
 More setup instructions coming soon.
